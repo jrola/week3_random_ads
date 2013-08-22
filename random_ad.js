@@ -1,5 +1,6 @@
-// updated with some real text
-  	// "hungry - Eat at joes <img src='image.png' />"
+		
+		// updated with some real text
+		// "hungry - Eat at joes <img src='image.png' />"
 		var ad_metadata = {
 			'ad0' : "Come into the store and buy products",
 			'ad1' : "If you like drinking come into this bar",				/* created text greater than 15 letters*/
@@ -12,7 +13,7 @@
 		rand_ad_display();
 		
 		function rand_ad_display() {
-		
+			// varibles
 			var ad_div = document.getElementById("ad");			
 			var ad_keys = [];		
 			var ad_key = "";
@@ -28,10 +29,10 @@
 				ad_keys.push(ad_key);
 			}
 			
-			var ad_keys_len = ad_keys.length;			
-			var rand_ad_key = getRandAdKey(ad_keys_len);
-			var ad_key_value = ad_keys[rand_ad_key];		
-			var ad_metadata_value = ad_metadata[ad_key_value];		
+			var ad_keys_len = ad_keys.length;				//varible ad_keys _len is set equal to ad_keys.length
+			var rand_ad_key = getRandAdKey(ad_keys_len);	//rand_ad_key is set equal to getRandKey which gets a ad key length from ad_keys len
+			var ad_key_value = ad_keys[rand_ad_key];		//ad_key_value is set equal to ad_keys which get random key from rand_ad_key
+			var ad_metadata_value = ad_metadata[ad_key_value];	// key you get a value from the metadata
 		
 			ad_div.innerHTML = ad_metadata_value;				
 			document.title =(ad_metadata_value.substr(0,15));		/* takes the metadata and cuts it after 15 letters*/
@@ -43,5 +44,6 @@
 			// gets random number, 0 to len(passed in)
 			return Math.floor( Math.random()* len);		
 		}
+		
 		
 		
